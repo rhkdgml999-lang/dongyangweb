@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자유게시판 - 로봇소프트웨어과</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="board.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="dept-nav">
+            <div class="container">
+                <h1 class="dept-name"><a href="index.html">로봇소프트웨어과</a></h1>
+                <nav class="sub-menu">
+                    <ul>
+                        <li><a href="index.html">메인으로</a></li>
+                        <li class="active"><a href="board.html">자유게시판</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container py-5">
+        <section class="board-container">
+            <div class="board-header">
+                <h2>자유게시판</h2>
+                <button id="btn-write" class="btn-primary">글쓰기</button>
+            </div>
+
+            <!-- Board List -->
+            <div id="board-list-view">
+                <table class="board-table">
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>작성자</th>
+                            <th>날짜</th>
+                        </tr>
+                    </thead>
+                    <tbody id="post-list">
+                        <!-- Posts will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Post Detail View (Hidden by default) -->
+            <div id="post-detail-view" style="display: none;">
+                <div class="post-header">
+                    <h3 id="detail-title"></h3>
+                    <div class="post-info">
+                        <span id="detail-author"></span> | <span id="detail-date"></span>
+                    </div>
+                </div>
+                <div id="detail-content" class="post-body"></div>
+                <div class="post-actions">
+                    <button id="btn-edit" class="btn-outline">수정</button>
+                    <button id="btn-delete" class="btn-danger">삭제</button>
+                    <button class="btn-back btn-outline">목록으로</button>
+                </div>
+
+                <!-- Comments Section -->
+                <div class="comments-section">
+                    <h4>댓글 <span id="comment-count">0</span></h4>
+                    <div id="comments-list"></div>
+                    <div class="comment-form">
+                        <input type="text" id="comment-author" placeholder="작성자">
+                        <textarea id="comment-text" placeholder="댓글을 입력하세요"></textarea>
+                        <button id="btn-comment-submit">등록</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Write/Edit Form (Hidden by default) -->
+            <div id="post-form-view" style="display: none;">
+                <h3 id="form-title">새 글 작성</h3>
+                <div class="form-group">
+                    <label>제목</label>
+                    <input type="text" id="post-title" placeholder="제목을 입력하세요">
+                </div>
+                <div class="form-group">
+                    <label>작성자</label>
+                    <input type="text" id="post-author" placeholder="작성자 성함">
+                </div>
+                <div class="form-group">
+                    <label>내용</label>
+                    <textarea id="post-content" rows="10" placeholder="내용을 입력하세요"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button id="btn-save" class="btn-primary">저장</button>
+                    <button class="btn-back btn-outline">취소</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Firebase SDK (v9 compat for simpler setup with CDN) -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+    
+    <script src="firebase-config.js"></script>
+    <script src="board.js"></script>
+</body>
+</html>
