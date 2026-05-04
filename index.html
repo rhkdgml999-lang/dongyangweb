@@ -13,142 +13,245 @@
     <header>
         <div class="container top-nav">
             <div class="logo">
-                <span>DY Robot</span>
+                <a href="index.html"><img src="logo_b.svg" id="main-logo" alt="Logo" style="height: 40px;"></a>
             </div>
             <nav class="main-menu">
                 <ul>
-                    <li><a href="#">대학소개</a></li>
-                    <li><a href="#">입학안내</a></li>
-                    <li><a href="#" style="color:var(--primary-color)">학부·학과</a></li>
-                    <li><a href="#">대학생활</a></li>
-                    <li><a href="#">대학뉴스</a></li>
+                    <li><a href="#" data-i18n="menu_intro">대학소개</a></li>
+                    <li><a href="#" data-i18n="menu_admission">입학안내</a></li>
+                    <li><a href="#" style="color:var(--primary-color)" data-i18n="menu_dept">학부·학과</a></li>
+                    <li><a href="#" data-i18n="menu_life">대학생활</a></li>
+                    <li><a href="#" data-i18n="menu_news">대학뉴스</a></li>
                 </ul>
             </nav>
-            <div class="header-actions">
-                <button class="btn-login">포털 로그인</button>
+            <div class="header-right">
+                <div class="lang-selector">
+                    <div class="lang-box" onclick="toggleLangDropdown(event)">
+                        <span id="current-lang">KR</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <ul class="lang-dropdown-list" id="lang-list">
+                        <li onclick="handleLangChange('ko')">Korean</li>
+                        <li onclick="handleLangChange('en')">English</li>
+                        <li onclick="handleLangChange('ch')">Chinese</li>
+                    </ul>
+                </div>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                </div>
+                <!-- 🚩 LOGIN BUTTON CLASS ENSURED -->
+                <button class="btn-login" data-i18n="login">로그인</button>
             </div>
         </div>
         <div class="dept-nav">
             <div class="container">
-                <h1 style="font-size: 1.2rem; font-weight: 700;">로봇소프트웨어과</h1>
+                <h1 style="font-size: 1.2rem; font-weight: 700;" data-i18n="dept_name">로봇소프트웨어과</h1>
                 <nav class="sub-menu">
                     <ul>
-                        <li><a href="#">학과소개</a></li>
-                        <li><a href="#">교육과정</a></li>
-                        <li><a href="#">교수소개</a></li>
-                        <li><a href="#">학과앨범</a></li>
-                        <li class="active"><a href="board.html" style="background: rgba(255,255,255,0.15); padding: 6px 15px; border-radius: 20px;">자유게시판</a></li>
+                        <li><a href="#" data-i18n="sub_intro">학과소개</a></li>
+                        <li><a href="#" data-i18n="sub_curri">교육과정</a></li>
+                        <li><a href="#" data-i18n="sub_prof">교수소개</a></li>
+                        <li><a href="#" data-i18n="sub_album">학과앨범</a></li>
+                        <li class="active"><a href="board.html" style="background: rgba(255,255,255,0.15); padding: 6px 15px; border-radius: 20px;" data-i18n="sub_board">자유게시판</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
 
-    <main>
-        <section class="hero-section">
-            <div class="container">
+    <main id="top" class="container">
+        <!-- Top Row -->
+        <div class="content-row">
+            <div class="hero-col">
                 <div class="hero-card">
                     <div class="hero-content">
-                        <h2>Future of<br><span style="color:var(--secondary-color)">Robotics</span></h2>
-                        <p>로봇소프트웨어 분야를 이끌 인재양성의 중심,<br>창의적인 기술로 미래를 설계합니다.</p>
-                        <div class="eng-title">ROBOT SOFTWARE</div>
+                        <h2 data-i18n="hero_title">로봇소프트웨어과</h2>
+                        <p data-i18n="hero_desc">로봇소프트웨어 분야를 이끌 인재양성의 중심</p>
                     </div>
+                    <!-- 🚩 EN OVERLAP FIX: SLOGAN -->
+                    <div class="eng-title" data-i18n="hero_slogan">Robot Software</div>
                     <div class="hero-image">
                         <img src="robot_banner_1777857553426.png" alt="Robot Character">
                     </div>
                     <div class="contact-info-bar">
-                        <div class="info-item"><i class="fas fa-map-marker-alt"></i> 4호관 206호</div>
+                        <div class="info-item"><i class="fas fa-map-marker-alt"></i> <span data-i18n="contact_loc">4호관 206호</span></div>
                         <div class="info-item"><i class="fas fa-phone"></i> 02-2610-1832</div>
                         <div class="info-item"><i class="fas fa-envelope"></i> yjyjang@dongyang.ac.kr</div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <div class="container content-grid">
-            <div class="grid-left">
-                <section class="card notice-section">
-                    <div class="section-title">
-                        <h3>학과 주요공지</h3>
-                        <a href="#"><i class="fas fa-plus"></i></a>
+            <div class="notice-col">
+                <div class="notice-box">
+                    <div class="box-header">
+                        <h3 data-i18n="notice_title">학과공지</h3>
+                        <i class="fas fa-plus"></i>
                     </div>
-                    <div class="notice-list">
-                        <div class="notice-item">
-                            <span class="title">2026학년도 로봇소프트웨어과 신입생 모집 안내</span>
-                            <span class="date">2026.05.01</span>
+                    <div class="notice-list-mini">
+                        <div class="notice-item-mini">
+                            <p data-i18n="notice_1">2026학년도 로봇소프트웨어과 신입생 모집 안내</p>
+                            <span>2026.05.01</span>
                         </div>
-                        <div class="notice-item">
-                            <span class="title">[반도체협회] 부트캠프 대학 우선 채용 공고</span>
-                            <span class="date">2026.04.28</span>
+                        <div class="notice-item-mini">
+                            <p data-i18n="notice_2">[반도체협회] 부트캠프 대학 우선 채용 공고</p>
+                            <span>2026.04.28</span>
                         </div>
-                        <div class="notice-item">
-                            <span class="title">로봇 경진대회 참가 팀 모집 (여름방학)</span>
-                            <span class="date">2026.04.20</span>
-                        </div>
-                        <div class="notice-item">
-                            <span class="title">스마트팩토리실무 특강 안내</span>
-                            <span class="date">2026.04.15</span>
+                        <div class="notice-item-mini">
+                            <p>2026학년도 1학기 「일반 질병」 출석 인정 절차 변경 안내</p>
+                            <span>2026.04.23</span>
                         </div>
                     </div>
-                </section>
-
-                <section class="card" style="margin-top: 30px;">
-                    <div class="section-title">
-                        <h3>전공 동아리</h3>
-                    </div>
-                    <div style="display: flex; gap: 15px; margin-bottom: 20px;">
-                        <span style="padding: 5px 15px; background: #333; color: white; border-radius: 4px; font-size: 0.8rem;">지능형로봇</span>
-                        <span style="padding: 5px 15px; background: #eee; border-radius: 4px; font-size: 0.8rem;">MAS</span>
-                        <span style="padding: 5px 15px; background: #eee; border-radius: 4px; font-size: 0.8rem;">MCA</span>
-                    </div>
-                    <p style="color:#666; font-size: 0.95rem;">지능형로봇 동아리는 4차 산업혁명 시대를 선도할 실무 능력을 배양하며, AI 기반의 자동화 시스템을 연구합니다.</p>
-                </section>
+                </div>
             </div>
+        </div>
 
-            <div class="grid-right">
-                <section class="card services-section">
-                    <div class="section-title">
-                        <h3>교내 통합 서비스</h3>
+        <!-- Middle Row -->
+        <div class="content-row-middle">
+            <div class="club-col card">
+                <div class="section-header-line">
+                    <h3 data-i18n="club_title">전공동아리</h3>
+                    <div class="club-tabs">
+                        <button class="tab-btn active" onclick="showClub('MAS')">MAS</button>
+                        <button class="tab-btn" onclick="showClub('MCA')">MCA</button>
+                        <button class="tab-btn" onclick="showClub('MoAS')">MoAS</button>
+                        <button class="tab-btn" onclick="showClub('SMART')">SMART</button>
+                        <button class="tab-btn" onclick="showClub('UR')">UR</button>
+                        <button class="tab-btn" onclick="showClub('Intel')">지능형로봇</button>
                     </div>
-                    <div class="services-grid">
-                        <div class="service-item">
-                            <div class="service-icon"><i class="fas fa-desktop"></i></div>
-                            <span style="font-size: 0.85rem; font-weight: 600;">e-Class</span>
-                        </div>
-                        <div class="service-item">
-                            <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
-                            <span style="font-size: 0.85rem; font-weight: 600;">수강신청</span>
-                        </div>
-                        <div class="service-item">
-                            <div class="service-icon"><i class="fas fa-book-reader"></i></div>
-                            <span style="font-size: 0.85rem; font-weight: 600;">디지털 도서관</span>
-                        </div>
-                        <div class="service-item">
-                            <div class="service-icon"><i class="fas fa-id-card"></i></div>
-                            <span style="font-size: 0.85rem; font-weight: 600;">학생종합관리</span>
-                        </div>
+                </div>
+                <div id="club-content" class="club-detail">
+                    <div class="club-text">
+                        <h4 id="club-name">MAS</h4>
+                        <p id="club-desc">MAS는 학교에서 배우는 것 뿐만 아니라 더 나아가 사회에 도움이 될 수 있는 로봇을 직접 만들어 각종 대회에 참여하며 학생들끼리 서로 협업을 하며 자신의 전공지식과 역량을 같이 키워나가는 로봇자동화공학부 전공동아리입니다.</p>
                     </div>
-                </section>
+                    <div class="club-img">
+                        <img src="club_mas.png" id="club-image" alt="Club Image">
+                    </div>
+                </div>
+            </div>
+            <div class="service-col card">
+                <div class="section-header-line">
+                    <h3 data-i18n="service_title">주요 서비스</h3>
+                </div>
+                <div class="service-grid-mini">
+                    <div class="s-link"><i class="fas fa-globe"></i><span data-i18n="s_e">e 서비스</span></div>
+                    <div class="s-link"><i class="fas fa-book"></i><span data-i18n="s_lib">도서관</span></div>
+                    <div class="s-link"><i class="fas fa-user-check"></i><span data-i18n="s_course">수강신청</span></div>
+                    <div class="s-link"><i class="fas fa-file-alt"></i><span data-i18n="s_cert">증명서 발급</span></div>
+                    <div class="s-link"><i class="fas fa-th-large"></i><span data-i18n="s_ms">MS오피스 365</span></div>
+                    <div class="s-link"><i class="fas fa-id-card"></i><span data-i18n="s_doit">학생종합관리</span></div>
+                </div>
+            </div>
+        </div>
 
-                <section class="card" style="margin-top: 30px; padding: 0; overflow: hidden;">
-                    <div style="background: #eee; height: 200px; display: flex; align-items: center; justify-content: center; color: #999;">
-                        <i class="fas fa-images fa-3x" style="opacity: 0.3;"></i>
-                    </div>
-                    <div style="padding: 20px;">
-                        <h4 style="font-size: 1rem; margin-bottom: 5px;">학과 학술제 사진첩</h4>
-                        <p style="font-size: 0.85rem; color:#888;">2026년도 신입생 환영회</p>
-                    </div>
-                </section>
+        <!-- Bottom Row -->
+        <div class="content-row-middle" style="margin-top: 30px; margin-bottom: 50px;">
+            <div style="flex: 2.1;"></div>
+            <div class="album-col card" style="flex: 0.9;">
+                <h3 style="margin-bottom: 20px; font-size: 1.1rem; color:#333;" data-i18n="album_title">학과앨범</h3>
+                <div style="height: 150px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.9rem;" data-i18n="no_posts">
+                    최근게시물이(가) 없습니다.
+                </div>
             </div>
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <img src="https://www.dongyang.ac.kr/sites/computer/images/common/logo.png" alt="Logo" style="width: 150px; opacity: 0.5; filter: grayscale(1); margin-bottom: 20px;">
-            <p>&copy; 2026 동양미래대학교 로봇소프트웨어과. 모든 권리 보유.</p>
-            <p style="margin-top: 10px; font-size: 0.8rem;">서울특별시 구로구 경인로 445 동양미래대학교</p>
+    <!-- Utility Bar -->
+    <div class="utility-bar">
+        <div class="container utility-icons">
+            <i class="fas fa-print" title="인쇄"></i>
+            <i class="fas fa-star" title="즐겨찾기"></i>
+            <i class="fas fa-share-alt" title="공유하기" onclick="shareSite()"></i>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="container footer-grid">
+                <div class="footer-left">
+                    <img src="logo_footer.svg" alt="DMU Logo" class="footer-logo">
+                    <p class="footer-slogan" data-i18n="footer_slogan">미래를 그리다.<br>동양미래대학교</p>
+                    <div class="footer-related-sites">
+                        <button><span data-i18n="related_sites">관련사이트</span> <span>+</span></button>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <div class="sitemap" id="footer-sitemap">
+                        <div class="sitemap-col">
+                            <h4 data-i18n="sitemap_mech">기계공학부</h4>
+                            <ul>
+                                <li data-i18n="dept_mech">기계공학과</li>
+                                <li data-i18n="dept_mech_design">기계설계공학과</li>
+                            </ul>
+                        </div>
+                        <div class="sitemap-col">
+                            <h4 data-i18n="sitemap_robot">로봇자동화공학부</h4>
+                            <ul>
+                                <li data-i18n="dept_auto">자동화공학과</li>
+                                <li data-i18n="dept_robot">로봇소프트웨어과</li>
+                            </ul>
+                        </div>
+                        <div class="sitemap-col">
+                            <h4 data-i18n="sitemap_elec">전기전자통신공학부</h4>
+                            <ul>
+                                <li data-i18n="dept_elec">전기공학과</li>
+                                <li data-i18n="dept_info">정보통신공학과</li>
+                            </ul>
+                        </div>
+                        <div class="sitemap-col">
+                            <h4 data-i18n="sitemap_comp">컴퓨터공학부</h4>
+                            <ul>
+                                <li data-i18n="dept_comp_soft">컴퓨터소프트웨어공학과</li>
+                                <li data-i18n="dept_ai_soft">인공지능소프트웨어학과</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-terms">
+                    <a href="#" data-i18n="privacy">개인정보처리방침</a>
+                    <a href="#" data-i18n="email_reject">이메일무단수집거부</a>
+                    <a href="#" data-i18n="univ_disclosure">대학정보공시</a>
+                    <a href="#" data-i18n="remote_support">원격지원</a>
+                </div>
+                <div class="footer-address">
+                    <p data-i18n="footer_addr">08221 서울특별시 구로구 경인로 445 동양미래대학교</p>
+                    <p>TEL. 02-2610-1700 FAX. 02-2688-5494</p>
+                </div>
+                <p class="copyright">COPYRIGHT(c) DONGYANG MIRAE UNIVERSITY. ALL RIGHTS RESERVED.</p>
+            </div>
         </div>
     </footer>
+
+    <button id="back-to-top" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="lang.js"></script>
+    <script>
+        const clubImages = {
+            'MAS': 'club_mas.png',
+            'MCA': 'https://via.placeholder.com/600x400?text=MCA+Club',
+            'MoAS': 'https://via.placeholder.com/600x400?text=MoAS+Club',
+            'SMART': 'https://via.placeholder.com/600x400?text=SMART+Club',
+            'UR': 'https://via.placeholder.com/600x400?text=UR+Club',
+            'Intel': 'https://via.placeholder.com/600x400?text=Intelligent+Robot'
+        };
+
+        function showClub(id) {
+            currentClubId = id;
+            const lang = localStorage.getItem('selectedLang') || 'ko';
+            const t = translations[lang];
+            
+            document.getElementById('club-name').innerText = (id === 'Intel' && lang === 'ko') ? '지능형로봇' : id;
+            document.getElementById('club-desc').innerText = t['desc_' + id];
+            document.getElementById('club-image').src = clubImages[id];
+            
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                const btnLabel = btn.innerText;
+                btn.classList.toggle('active', btnLabel === id || (id === 'Intel' && btnLabel === '지능형로봇'));
+            });
+        }
+    </script>
 </body>
 </html>

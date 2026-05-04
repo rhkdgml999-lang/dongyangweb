@@ -13,27 +13,48 @@
 </head>
 <body>
     <header>
+        <div class="container top-nav">
+            <div class="logo">
+                <a href="index.html"><img src="logo_b.svg" id="main-logo" alt="Logo" style="height: 40px;"></a>
+            </div>
+            <nav class="main-menu">
+                <ul>
+                    <li><a href="index.html" data-i18n="menu_intro">홈으로</a></li>
+                    <li><a href="board.html" style="color:var(--primary-color)" data-i18n="sub_board">자유게시판</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <div class="lang-selector">
+                    <div class="lang-box" onclick="toggleLangDropdown()">
+                        <span id="current-lang">KR</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <ul class="lang-dropdown-list" id="lang-list">
+                        <li onclick="setLanguage('ko')">Korean</li>
+                        <li onclick="setLanguage('en')">English</li>
+                        <li onclick="setLanguage('ch')">Chinese</li>
+                    </ul>
+                </div>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                </div>
+                <button class="btn-login" data-i18n="login">로그인</button>
+            </div>
+        </div>
         <div class="dept-nav">
             <div class="container">
-                <h1 class="dept-name"><a href="index.html">로봇소프트웨어과</a></h1>
-                <nav class="sub-menu">
-                    <ul>
-                        <li><a href="index.html">메인으로</a></li>
-                        <li class="active"><a href="board.html">자유게시판</a></li>
-                    </ul>
-                </nav>
+                <h1 style="font-size: 1.2rem; font-weight: 700;" data-i18n="sub_board">자유게시판</h1>
             </div>
         </div>
     </header>
 
-    <main class="container py-5">
+    <main class="container py-5" id="top">
         <section class="board-container">
             <div class="board-header">
-                <h2>자유게시판</h2>
+                <h2 data-i18n="sub_board">자유게시판</h2>
                 <button id="btn-write" class="btn-primary">글쓰기</button>
             </div>
 
-            <!-- Board List -->
             <div id="board-list-view">
                 <table class="board-table">
                     <thead>
@@ -45,12 +66,10 @@
                         </tr>
                     </thead>
                     <tbody id="post-list">
-                        <!-- Posts will be loaded here -->
                     </tbody>
                 </table>
             </div>
 
-            <!-- Post Detail View (Hidden by default) -->
             <div id="post-detail-view" style="display: none;">
                 <div class="post-header">
                     <h3 id="detail-title"></h3>
@@ -65,7 +84,6 @@
                     <button class="btn-back btn-outline">목록으로</button>
                 </div>
 
-                <!-- Comments Section -->
                 <div class="comments-section">
                     <h4>댓글 <span id="comment-count">0</span></h4>
                     <div id="comments-list"></div>
@@ -77,7 +95,6 @@
                 </div>
             </div>
 
-            <!-- Write/Edit Form (Hidden by default) -->
             <div id="post-form-view" style="display: none;">
                 <h3 id="form-title">새 글 작성</h3>
                 <div class="form-group">
@@ -100,10 +117,60 @@
         </section>
     </main>
 
-    <!-- Firebase SDK (v9 compat for simpler setup with CDN) -->
+    <!-- Utility Bar -->
+    <div class="utility-bar">
+        <div class="container utility-icons">
+            <i class="fas fa-print" title="인쇄"></i>
+            <i class="fas fa-star" title="즐겨찾기"></i>
+            <i class="fas fa-share-alt" title="공유하기" onclick="shareSite()"></i>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="container footer-grid">
+                <div class="footer-left">
+                    <img src="logo_footer.svg" alt="DMU Logo" class="footer-logo">
+                    <p class="footer-slogan" data-i18n="footer_slogan">미래를 그리다.<br>동양미래대학교</p>
+                    <div class="footer-related-sites">
+                        <button><span data-i18n="related_sites">관련사이트</span> <span>+</span></button>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <div class="sitemap">
+                        <div class="sitemap-col">
+                            <h4 data-i18n="sitemap_robot">로봇자동화공학부</h4>
+                            <ul>
+                                <li data-i18n="dept_auto">자동화공학과</li>
+                                <li data-i18n="dept_robot">로봇소프트웨어과</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-terms">
+                    <a href="#" data-i18n="privacy">개인정보처리방침</a>
+                    <a href="#" data-i18n="email_reject">이메일무단수집거부</a>
+                    <a href="#" data-i18n="univ_disclosure">대학정보공시</a>
+                    <a href="#" data-i18n="remote_support">원격지원</a>
+                </div>
+                <div class="footer-address">
+                    <p data-i18n="footer_addr">08221 서울특별시 구로구 경인로 445 동양미래대학교</p>
+                </div>
+                <p class="copyright">COPYRIGHT(c) DONGYANG MIRAE UNIVERSITY. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
+
     <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
     
+    <script src="lang.js"></script>
     <script src="firebase-config.js"></script>
     <script src="board.js"></script>
 </body>
