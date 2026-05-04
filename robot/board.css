@@ -1,0 +1,200 @@
+.py-5 {
+    padding: 50px 0;
+}
+
+.board-container {
+    min-height: 600px;
+}
+
+.board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.board-header h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.board-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.board-table th, .board-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.board-table th {
+    background: #f8f9fa;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.board-table tr:hover td {
+    background: #fcfcfc;
+    cursor: pointer;
+}
+
+.board-table td {
+    font-size: 0.9rem;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Buttons */
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background: var(--secondary-color);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid #ddd;
+    color: #666;
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-danger {
+    background: #ff4d4f;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Detail View */
+.post-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.post-info {
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 10px;
+}
+
+.post-body {
+    min-height: 200px;
+    padding: 20px 0;
+    white-space: pre-wrap;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.post-actions {
+    display: flex;
+    gap: 10px;
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+}
+
+/* Comments */
+.comments-section {
+    margin-top: 40px;
+    background: #f9fafb;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.comments-section h4 {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.comment-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.comment-author {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.comment-date {
+    font-size: 0.75rem;
+    color: #999;
+    margin-left: 10px;
+}
+
+.comment-text {
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+.comment-form {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comment-form input {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.comment-form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    height: 80px;
+}
+
+#btn-comment-submit {
+    align-self: flex-end;
+    background: #444;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
